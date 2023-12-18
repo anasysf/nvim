@@ -17,10 +17,14 @@ if not lspconfig_ok then
 end
 
 local ensure_installed = {
+  'jsonls',
   'lua_ls',
+  'tsserver',
 }
 
-local ignored_servers = {}
+local ignored_servers = {
+  'tsserver',
+}
 
 mason_lspconfig.setup {
   ensure_installed = ensure_installed,

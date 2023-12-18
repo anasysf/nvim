@@ -32,3 +32,7 @@ vim.cmd 'filetype plugin indent on'
 
 -- RELATIVE NUMBERS
 opt.relativenumber = true
+
+-- ADD DOTS TO BEGINNING OF THE LINE
+opt.list = true
+opt.listchars = 'lead:⋅'
