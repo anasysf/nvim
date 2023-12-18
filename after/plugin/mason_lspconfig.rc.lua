@@ -17,6 +17,8 @@ if not lspconfig_ok then
 end
 
 local ensure_installed = {
+  'cssls',
+  'html',
   'jsonls',
   'lua_ls',
   'tsserver',
