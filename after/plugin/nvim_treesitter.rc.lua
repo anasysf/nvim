@@ -15,6 +15,8 @@ local ensure_installed = {
   'json',
   'jsonc',
   'lua',
+  'markdown',
+  'markdown_inline',
   'toml',
   'typescript',
   'vim',
