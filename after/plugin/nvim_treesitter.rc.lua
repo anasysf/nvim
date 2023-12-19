@@ -8,6 +8,7 @@ if not ok then
 end
 
 local ensure_installed = {
+  'comment',
   'css',
   'html',
   'javascript',
