@@ -29,6 +29,7 @@ return {
         },
       },
       lsp_saga = true,
+      markdown = true,
     },
   },
   init = function()
