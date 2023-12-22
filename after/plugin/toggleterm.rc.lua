@@ -11,3 +11,4 @@ local opts = { noremap = true, silent = true }
 keymap.set('n', '<leader>tf', ':ToggleTerm direction=float<CR>', opts)
 keymap.set('n', '<leader>th', ':ToggleTerm direction=horizontal<CR>', opts)
 keymap.set('n', '<leader>tv', ':ToggleTerm direction=vertical<CR>', opts)
+keymap.set('n', '<leader>tt', ':ToggleTerm direction=tab<CR>', opts)
