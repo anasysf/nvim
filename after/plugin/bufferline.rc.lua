@@ -7,6 +7,8 @@ bufferline.setup {
   options = {
     themable = true,
     numbers = 'ordinal',
+    middle_mouse_command = 'bdelete! %d',
+    right_mouse_command = nil,
     hover = {
       enabled = true,
       delay = 200,
