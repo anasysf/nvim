@@ -12,9 +12,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local opts = { noremap = false, silent = true, buffer = ev.buf }
     -- keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    keymap.set('n', '<leader>f', vim.diagnostic.open_float, opts)
+    -- keymap.set('n', '<leader>f', vim.diagnostic.open_float, opts)
     keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    -- keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     -- keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     -- keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
     -- keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
