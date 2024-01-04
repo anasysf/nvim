@@ -24,10 +24,10 @@ end
 telescope.setup {
   defaults = {
     file_ignore_patterns = {
-        'dist',
-        'docs',
-        'node_modules',
-        'out',
+      'dist',
+      'docs',
+      'node_modules',
+      'out',
     },
     mappings = {
       i = {

@@ -1,8 +1,8 @@
 return {
-  'akinsho/bufferline.nvim',
+  'nvim-tree/nvim-tree.lua',
   version = '*',
+  lazy = false,
   dependencies = {
     'nvim-tree/nvim-web-devicons',
-    'catppuccin/nvim',
   },
 }
