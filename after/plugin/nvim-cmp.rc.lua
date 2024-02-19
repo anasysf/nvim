@@ -1,5 +1,7 @@
 local ok, cmp = pcall(require, 'cmp')
-if not ok then return vim.notify('COULD NOT LOAD CMP', vim.log.levels.ERROR, { title = 'CMP' }) end
+if not ok then
+  return vim.notify('COULD NOT LOAD CMP', vim.log.levels.ERROR, { title = 'CMP' })
+end
 
 local luasnip_ok, luasnip = pcall(require, 'luasnip')
 if not luasnip_ok then

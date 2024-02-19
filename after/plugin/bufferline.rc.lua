@@ -1,6 +1,10 @@
 local ok, bufferline = pcall(require, 'bufferline')
 if not ok then
-  return vim.notify('COULD NOT LOAD BUFFERLINE', vim.log.levels.ERROR, { title = 'BUFFERLINE' })
+  return vim.notify(
+    'COULD NOT LOAD BUFFERLINE',
+    vim.log.levels.ERROR,
+    { title = 'BUFFERLINE' }
+  )
 end
 
 local bufdelete_ok, bufdelete = pcall(require, 'bufdelete')
