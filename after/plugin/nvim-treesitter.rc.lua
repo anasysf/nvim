@@ -12,6 +12,8 @@ local ensure_installed = {
   'html',
   'javascript',
   'jsdoc',
+  'json',
+  'jsonc',
   'lua',
   'luadoc',
   'toml',
