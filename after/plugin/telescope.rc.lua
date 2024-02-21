@@ -25,8 +25,11 @@ telescope.setup({
   },
 })
 
+telescope.load_extension 'fzf'
+
 local keymap = vim.keymap
 local opts = { noremap = false, silent = true }
 
 keymap.set('n', '<leader>ff', builtin.find_files, opts)
 keymap.set('n', '<leader>fg', builtin.live_grep, opts)
+keymap.set('n', '<leader>fh', builtin.colorscheme, opts)

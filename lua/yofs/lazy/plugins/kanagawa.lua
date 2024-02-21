@@ -2,7 +2,7 @@ return {
   'rebelot/kanagawa.nvim',
   opts = {
     transparent = false,
-    overrides = function(colors)
+    --[[ overrides = function(colors)
       local theme = colors.theme
       return {
         TelescopeTitle = { fg = theme.ui.special, bold = true },
@@ -13,7 +13,7 @@ return {
         TelescopePreviewNormal = { bg = theme.ui.bg_dim },
         TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
       }
-    end,
+    end, ]]
   },
-  init = function() return vim.cmd.colorscheme 'kanagawa-wave' end,
+  -- init = function() return vim.cmd.colorscheme 'kanagawa-wave' end,
 }
