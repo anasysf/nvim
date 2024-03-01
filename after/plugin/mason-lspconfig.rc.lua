@@ -29,6 +29,7 @@ end
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
 local ensure_installed = {
+  'bashls',
   'html',
   'jsonls',
   'lua_ls',
