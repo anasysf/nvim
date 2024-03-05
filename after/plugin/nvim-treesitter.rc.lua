@@ -9,6 +9,7 @@ end
 
 local ensure_installed = {
   'bash',
+  'comment',
   'gitignore',
   'html',
   'javascript',
