@@ -13,6 +13,7 @@ if not bufdelete_ok then
 end
 
 bufferline.setup({
+  highlights = require('catppuccin.groups.integrations.bufferline').get(),
   options = {
     numbers = 'ordinal',
     diagnostics = 'nvim_lsp',

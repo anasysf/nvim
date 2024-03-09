@@ -9,6 +9,9 @@ if not luasnip_ok then
 end
 
 cmp.setup({
+  experimental = {
+    ghost_text = true,
+  },
   snippet = {
     expand = function(args) return luasnip.lsp_expand(args.body) end,
   },

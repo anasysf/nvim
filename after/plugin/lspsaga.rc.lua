@@ -10,6 +10,9 @@ lspsaga.setup({
   diagnostic = {
     show_code_action = false,
   },
+  ui = {
+    kind = require('catppuccin.groups.integrations.lsp_saga').custom_kind(),
+  },
 })
 
 local keymap = vim.keymap
