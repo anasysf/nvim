@@ -5,5 +5,5 @@ return {
   opts = {
     style = 'storm',
   },
-  init = function() return vim.cmd.colorscheme 'tokyonight' end,
+  -- init = function() return vim.cmd.colorscheme 'tokyonight' end,
 }
