@@ -31,12 +31,16 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 local ensure_installed = {
   'bashls',
   'html',
+  'jdtls',
   'jsonls',
   'lua_ls',
+  'rust_analyzer',
   'tsserver',
 }
 
 local ignored_servers = {
+  'jdtls',
+  'rust_analyzer',
   'tsserver',
 }
 
