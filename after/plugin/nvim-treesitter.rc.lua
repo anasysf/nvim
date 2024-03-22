@@ -12,6 +12,7 @@ local ensure_installed = {
   'comment',
   'gitignore',
   'html',
+  'ini',
   'java',
   'javascript',
   'jsdoc',
