@@ -19,6 +19,7 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 keymap.set('n', '<leader>rn', ':Lspsaga rename<CR>', opts)
+keymap.set('n', 'K', ':Lspsaga hover_doc<CR>', opts)
 keymap.set({ 'n', 'v' }, '<leader>ca', ':Lspsaga code_action<CR>', opts)
 keymap.set('n', '<leader>f', ':Lspsaga show_line_diagnostics<CR>', opts)
 keymap.set('n', '<leader>np', ':Lspsaga diagnostic_jump_prev<CR>', opts)

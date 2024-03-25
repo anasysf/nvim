@@ -10,6 +10,7 @@ end
 local ensure_installed = {
   'bash',
   'comment',
+  'css',
   'gitignore',
   'html',
   'ini',
@@ -20,6 +21,8 @@ local ensure_installed = {
   'jsonc',
   'lua',
   'luadoc',
+  'markdown',
+  'markdown_inline',
   'properties',
   'rust',
   'toml',

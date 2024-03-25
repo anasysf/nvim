@@ -30,6 +30,8 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 
 local ensure_installed = {
   'bashls',
+  'cssls',
+  'cssmodules_ls',
   'html',
   'jdtls',
   'jsonls',
