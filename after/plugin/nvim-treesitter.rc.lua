@@ -24,6 +24,7 @@ local ensure_installed = {
   'markdown',
   'markdown_inline',
   'properties',
+  'regex',
   'rust',
   'toml',
   'tsx',
