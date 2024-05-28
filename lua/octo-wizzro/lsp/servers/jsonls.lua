@@ -5,7 +5,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 local schemas = {
   {
     url = 'https://json.schemastore.org/package',
-    fileMatch = 'package.json',
+    fileMatch = { 'package.json' },
   },
   {
     url = 'https://json.schemastore.org/tsconfig',
