@@ -10,14 +10,17 @@ end
 
 local ensure_installed = {
   'clangd',
+  'cssls',
   'jsonls',
   'lua_ls',
   'rust_analyzer',
   'sqls',
+  'tailwindcss',
+  'tsserver',
   'yamlls',
 }
 
-local ignored_servers = {}
+local ignored_servers = { 'tsserver' }
 
 mason_lspconfig.setup {
   ensure_installed = ensure_installed,
