@@ -1,1 +1,1 @@
-return { 'nvim-lualine/lualine.nvim' }
+return { 'nvim-lualine/lualine.nvim', opts = {} }
