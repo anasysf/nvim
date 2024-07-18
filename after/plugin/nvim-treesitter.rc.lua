@@ -4,7 +4,10 @@ if not ok then
 end
 
 local ensure_installed = {
+  'javascript',
   'lua',
+  'tsx',
+  'typescript',
   'vimdoc',
 }
 
