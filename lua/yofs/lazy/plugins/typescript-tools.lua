@@ -1,5 +1,7 @@
 return {
   "pmizio/typescript-tools.nvim",
   dependencies = { "neovim/nvim-lspconfig" },
-  opts = {},
+  opts = {
+    on_attach = require 'yofs.lsp.utils.on_attach',
+  },
 }
