@@ -9,13 +9,12 @@ if not lspconf_ok then
 end
 
 local ensure_installed = {
+  'jsonls',
   'lua_ls',
   'tsserver',
 }
 
-local ignored_servers = {
-  'tsserver',
-}
+local ignored_servers = { 'tsserver' }
 
 lspconfig.util.default_config = vim.tbl_extend(
   'force',

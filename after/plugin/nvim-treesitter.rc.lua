@@ -5,6 +5,8 @@ end
 
 local ensure_installed = {
   'javascript',
+  'json',
+  'jsonc',
   'lua',
   'tsx',
   'typescript',
