@@ -9,6 +9,8 @@ if not lspconf_ok then
 end
 
 local ensure_installed = {
+  'cssls',
+  'html',
   'jsonls',
   'lua_ls',
   'tailwindcss',
