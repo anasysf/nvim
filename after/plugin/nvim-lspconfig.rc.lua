@@ -11,6 +11,7 @@ end
 local ensure_installed = {
   'jsonls',
   'lua_ls',
+  'tailwindcss',
   'tsserver',
 }
 
