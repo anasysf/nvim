@@ -4,6 +4,7 @@ if not ok then
 end
 
 local ensure_installed = {
+  'bash',
   'css',
   'html',
   'javascript',

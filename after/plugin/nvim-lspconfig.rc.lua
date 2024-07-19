@@ -9,6 +9,7 @@ if not lspconf_ok then
 end
 
 local ensure_installed = {
+  'bashls',
   'cssls',
   'html',
   'jsonls',
