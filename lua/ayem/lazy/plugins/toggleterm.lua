@@ -1,8 +1,8 @@
 return {
   'akinsho/toggleterm.nvim',
-  version = "*",
+  version = '*',
   config = true,
-  init = function ()
+  init = function()
     local keymap = vim.keymap
     local opts = { silent = true }
 
