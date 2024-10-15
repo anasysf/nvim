@@ -17,6 +17,7 @@ local ensure_installed = {
   'javascript',
   'lua',
   'luap',
+  'properties',
   'twig',
 }
 
