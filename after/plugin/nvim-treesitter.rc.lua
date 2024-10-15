@@ -10,6 +10,7 @@ end
 local ensure_installed = {
   'comment',
   'css',
+  'editorconfig',
   'gitignore',
   'html',
   'java',
