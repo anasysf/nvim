@@ -9,6 +9,8 @@ opt.colorcolumn = '100'
 
 opt.list = true
 
+opt.termguicolors = true
+
 local space = '·'
 opt.listchars:append {
   tab = '│─',
