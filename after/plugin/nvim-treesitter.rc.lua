@@ -19,6 +19,9 @@ local ensure_installed = {
   'luap',
   'properties',
   'twig',
+  'vim',
+  'vimdoc',
+  'xml',
 }
 
 configs.setup {
