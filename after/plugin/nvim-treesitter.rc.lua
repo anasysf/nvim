@@ -15,6 +15,7 @@ local ensure_installed = {
   'gitcommit',
   'gitignore',
   'html',
+  'ini',
   'java',
   'javascript',
   'jsdoc',
