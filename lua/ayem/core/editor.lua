@@ -6,10 +6,14 @@ opt.number = true
 opt.relativenumber = true
 
 opt.colorcolumn = '100'
+opt.signcolumn = 'yes'
 
 opt.list = true
 
 opt.termguicolors = true
+
+opt.cursorline = true
+opt.scrolloff = 10
 
 local space = '·'
 opt.listchars:append {
