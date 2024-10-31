@@ -31,6 +31,7 @@ local ensure_installed = {
   'properties',
   'tmux',
   'twig',
+  'typescript',
   'vim',
   'vimdoc',
   'xml',
