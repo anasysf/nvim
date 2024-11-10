@@ -1,19 +1,11 @@
 local ok, cmp = pcall(require, 'cmp')
 if not ok then
-  return vim.notify(
-    'COULD NOT LOAD NVIM-CMP',
-    vim.log.levels.ERROR,
-    { title = 'NVIM-CMP' }
-  )
+  return vim.notify('COULD NOT LOAD NVIM-CMP', vim.log.levels.ERROR, { title = 'NVIM-CMP' })
 end
 
 local luasnip_ok, luasnip = pcall(require, 'luasnip')
 if not luasnip_ok then
-  return vim.notify(
-    'COULD NOT LOAD LUASNIP',
-    vim.log.levels.ERROR,
-    { title = 'LUASNIP' }
-  )
+  return vim.notify('COULD NOT LOAD LUASNIP', vim.log.levels.ERROR, { title = 'LUASNIP' })
 end
 
 cmp.setup {
@@ -48,30 +40,30 @@ cmp.setup {
       end
     end, { 'i', 's' }),
   },
-  sources = cmp.config.sources{
+  sources = cmp.config.sources {
     { name = 'nvim_lsp' },
     { name = 'luasnip' }, -- For luasnip users.
     { name = 'buffer' },
     { name = 'path' },
     {
-        name = "lazydev",
-        group_index = 0, -- set group index to 0 to skip loading LuaLS completions
-    }
+      name = 'lazydev',
+      group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+    },
   },
 }
 
 cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = 'buffer' }
-  }
+    { name = 'buffer' },
+  },
 })
 
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources{
+  sources = cmp.config.sources {
     { name = 'path' },
     { name = 'cmdline' },
   },
-  matching = { disallow_symbol_nonprefix_matching = false }
+  matching = { disallow_symbol_nonprefix_matching = false },
 })
