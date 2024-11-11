@@ -18,6 +18,8 @@ local capabilities = cmp_lsp.default_capabilities()
 -- @type string[]
 local ensure_installed = {
   'lua_ls',
+  -- 'phpactor',
+  'intelephense',
 }
 
 -- @type string[]
