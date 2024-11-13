@@ -17,13 +17,17 @@ local capabilities = cmp_lsp.default_capabilities()
 
 -- @type string[]
 local ensure_installed = {
-  'lua_ls',
-  -- 'phpactor',
   'intelephense',
+  'lua_ls',
+  'twiggy_language_server',
+  'ts_ls',
+  -- 'phpactor',
 }
 
 -- @type string[]
-local ignored_servers = {}
+local ignored_servers = {
+  'ts_ls',
+}
 
 mlsp.setup {
   ensure_installed = ensure_installed,
