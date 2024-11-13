@@ -15,17 +15,20 @@ end
 
 local capabilities = cmp_lsp.default_capabilities()
 
--- @type string[]
+---@type string[]
 local ensure_installed = {
   'intelephense',
   'lua_ls',
-  'twiggy_language_server',
+  'rust_analyzer',
   'ts_ls',
+  'twiggy_language_server',
+  'taplo',
   -- 'phpactor',
 }
 
--- @type string[]
+---@type string[]
 local ignored_servers = {
+  'rust_analyzer',
   'ts_ls',
 }
 
@@ -33,32 +36,7 @@ mlsp.setup {
   ensure_installed = ensure_installed,
 }
 
-local keymap = vim.keymap
-
-local on_attach = function(_, bufnr)
-  local nnoremap = function(keys, fn, desc)
-    if desc then
-      desc = 'LSP: ' .. desc
-    end
-    keymap.set('n', keys, fn, { buffer = bufnr, noremap = true, desc = desc })
-  end
-
-  nnoremap('<leader>dm', vim.diagnostic.open_float, 'Open floating diagnostic message')
-  nnoremap('gp', vim.diagnostic.goto_prev, 'Go to previous diagnostic message')
-  nnoremap('gn', vim.diagnostic.goto_next, 'Go to next diagnostic message')
-  nnoremap('<leader>dl', vim.diagnostic.setloclist, 'Open [d]iagnostics [l]ist')
-
-  nnoremap('gd', vim.lsp.buf.definition, '[G]oto [d]efinition')
-  nnoremap('K', vim.lsp.buf.hover, 'Hover documentation')
-  nnoremap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-  keymap.set(
-    { 'n', 'v' },
-    '<leader>ca',
-    vim.lsp.buf.code_action,
-    { buffer = bufnr, noremap = true, desc = 'LSP:  [C]ode [A]ction' }
-  )
-end
-
+local on_attach = require 'ayem.lspconfig.utils.on_attach'
 local function setup()
   local server_opts = {
     capabilities = capabilities,
@@ -66,8 +44,10 @@ local function setup()
   }
 
   for _, server in pairs(ensure_installed) do
-    if ignored_servers[server] then
-      return
+    for _, ignored_server in pairs(ignored_servers) do
+      if ignored_server == server then
+        return
+      end
     end
 
     local server_ok, server_name = pcall(require, 'ayem.lspconfig.servers.' .. server)
