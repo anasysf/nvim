@@ -1,0 +1,7 @@
+column_width = 100
+quote_style = "AutoPreferSingle"
+call_parentheses = "None"
+collapse_simple_statement = "Always"
+
+[sort_requires]
+enabled = true
