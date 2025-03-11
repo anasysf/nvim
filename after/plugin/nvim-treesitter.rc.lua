@@ -7,6 +7,23 @@ if not ok then
 	)
 end
 
+local install_ok, install = pcall(require, 'nvim-treesitter.install')
+if not install_ok then
+	return vim.notify(
+		'COULD NOT LOAD NVIM-TREESITTER [INSTALL]',
+		vim.log.levels.ERROR,
+		{ title = 'nvim-treesitter [INSTALL]' }
+	)
+end
+
+install.prefer_git = false
+
+if vim.fn.has 'macunix' == 0 then
+	install.compilers = { --[[ 'clang', ]]
+		'zig',
+	}
+end
+
 local ensure_installed = {
 	'comment',
 	'gitignore',

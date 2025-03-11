@@ -1,6 +1,4 @@
-if vim.loader then
-	vim.loader.enable()
-end
+if vim.loader then vim.loader.enable() end
 
 require 'ayem.core.colors'
 require 'ayem.core.mappings'

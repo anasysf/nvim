@@ -18,3 +18,5 @@ opt.listchars:append {
 	trail = space,
 	nbsp = space,
 }
+
+opt.incsearch = true

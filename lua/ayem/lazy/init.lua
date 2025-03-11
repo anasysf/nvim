@@ -21,15 +21,15 @@ lazy.setup {
 		rtp = {
 			-- disable some rtp plugins
 			disabled_plugins = {
-				"gzip",
+				'gzip',
 				-- "matchit",
 				-- "matchparen",
 				-- "netrwPlugin",
-				"rplugin",
-				"tarPlugin",
-				"tohtml",
-				"tutor",
-				"zipPlugin",
+				'rplugin',
+				'tarPlugin',
+				'tohtml',
+				'tutor',
+				'zipPlugin',
 			},
 		},
 	},
