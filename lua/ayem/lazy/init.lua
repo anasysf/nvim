@@ -17,5 +17,21 @@ lazy.setup {
 		{ import = 'ayem.lazy.plugins' },
 	},
 	install = { colorscheme = { 'retrobox' } },
+	performance = {
+		rtp = {
+			-- disable some rtp plugins
+			disabled_plugins = {
+				"gzip",
+				-- "matchit",
+				-- "matchparen",
+				-- "netrwPlugin",
+				"rplugin",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
+	},
 	checker = { enable = true },
 }
