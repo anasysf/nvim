@@ -19,15 +19,14 @@ end
 install.prefer_git = false
 
 if vim.fn.has 'win32' == 1 then
-	install.compilers = { --[[ 'clang', ]]
-		'zig',
-	}
+	install.compilers = { 'clang', 'zig' }
 end
 
 local ensure_installed = {
 	'comment',
 	'dockerfile',
 	'gitignore',
+	'html',
 	'javascript',
 	'jsdoc',
 	'json',
@@ -36,6 +35,7 @@ local ensure_installed = {
 	'luadoc',
 	'luap',
 	'toml',
+	'typescript',
 	'vimdoc',
 }
 

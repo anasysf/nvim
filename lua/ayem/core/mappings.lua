@@ -16,9 +16,8 @@ keymap.set('n', '<leader>rn', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Lef
 keymap.set('v', 'K', ":m '<-2<CR>gv=gv", opts)
 keymap.set('v', 'J', ":m '>+1<CR>gv=gv", opts)
 
-
-keymap.set('n', '<ESC><ESC>', "<CMD>nohlsearch<CR>", opts)
-keymap.set('n', '<C-w>', "<CMD>setlocal wrap! nowrap?<CR>", opts)
+keymap.set('n', '<ESC><ESC>', '<CMD>nohlsearch<CR>', opts)
+keymap.set('n', '<C-w>', '<CMD>setlocal wrap! nowrap?<CR>', opts)
 
 keymap.set('n', '<C-t>', '<CMD>tabnew<CR>', opts)
 keymap.set('n', '<C-x>', '<CMD>tabclose<CR>', opts)
