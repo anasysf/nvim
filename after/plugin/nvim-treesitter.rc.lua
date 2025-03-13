@@ -18,9 +18,7 @@ end
 
 install.prefer_git = false
 
-if vim.fn.has 'win32' == 1 then
-	install.compilers = { 'clang', 'zig' }
-end
+if vim.fn.has 'win32' == 1 then install.compilers = { 'clang', 'zig' } end
 
 local ensure_installed = {
 	'comment',

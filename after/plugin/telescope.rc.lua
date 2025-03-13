@@ -13,6 +13,7 @@ if not ok then
 end
 
 telescope.setup {
+	buffers = { path_display = { 'truncate' } },
 	extensions = {
 		fzf = {
 			fuzzy = true, -- false will only do exact matching
