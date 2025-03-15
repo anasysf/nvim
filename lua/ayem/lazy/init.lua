@@ -16,7 +16,7 @@ lazy.setup {
 	spec = {
 		{ import = 'ayem.lazy.plugins' },
 	},
-	install = { colorscheme = { 'retrobox' } },
+	install = { colorscheme = { 'evangelion' } },
 	performance = {
 		rtp = {
 			-- disable some rtp plugins
