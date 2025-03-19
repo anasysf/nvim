@@ -11,6 +11,9 @@ keymap.set('n', '<C-o>', '<CMD>Vexplore<CR>', opts)
 keymap.set('n', '<A-x>', '<CMD>bdelete<CR>', opts)
 keymap.set('n', '<C-a>', 'ggVG', opts)
 
+keymap.set('v', '<', '<gv', opts)
+keymap.set('v', '>', '>gv', opts)
+
 keymap.set('n', '<leader>arn', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 keymap.set('v', 'K', ":m '<-2<CR>gv=gv", opts)

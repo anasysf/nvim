@@ -27,7 +27,11 @@ local handlers = {
 	end,
 }
 
-local ensure_installed = { 'lua_ls', 'ts_ls' }
+local ensure_installed = {
+	'intelephense',
+	'lua_ls',
+	'ts_ls',
+}
 mason_lspconfig.setup {
 	ensure_installed = ensure_installed,
 	handlers = handlers,

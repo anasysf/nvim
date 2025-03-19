@@ -22,6 +22,7 @@ if vim.fn.has 'win32' == 1 then install.compilers = { 'clang', 'zig' } end
 
 local ensure_installed = {
 	'comment',
+	'css',
 	'dockerfile',
 	'gitignore',
 	'html',
@@ -32,7 +33,10 @@ local ensure_installed = {
 	'lua',
 	'luadoc',
 	'luap',
+	'php',
+	'phpdoc',
 	'toml',
+	'twig',
 	'typescript',
 	'vimdoc',
 }

@@ -17,6 +17,7 @@ lazy.setup {
 		{ import = 'ayem.lazy.plugins' },
 	},
 	install = { colorscheme = { 'evangelion' } },
+	change_detection = { notify = false },
 	performance = {
 		rtp = {
 			-- disable some rtp plugins
