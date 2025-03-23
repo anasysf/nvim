@@ -29,6 +29,7 @@ local handlers = {
 
 local ensure_installed = {
 	'intelephense',
+	'jsonls',
 	'lua_ls',
 	'ts_ls',
 }
