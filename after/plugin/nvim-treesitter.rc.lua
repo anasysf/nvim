@@ -36,6 +36,7 @@ local ensure_installed = {
 	'php',
 	'phpdoc',
 	'toml',
+	'tsx',
 	'twig',
 	'typescript',
 	'vimdoc',
