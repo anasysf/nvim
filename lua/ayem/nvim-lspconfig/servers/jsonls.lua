@@ -14,6 +14,11 @@ local schemas = {
 		fileMatch = { '.prettierrc', '.prettierrc.json' },
 		description = 'Schema for .prettierrc',
 	},
+	{
+		url = 'https://json.schemastore.org/babelrc.json',
+		fileMatch = { '.babelrc.json', 'babel.config.json' },
+		description = 'JSON schema for Babel 6+ configuration files',
+	},
 }
 
 return {
