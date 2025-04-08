@@ -28,9 +28,13 @@ local handlers = {
 }
 
 local ensure_installed = {
+	'css_variables',
+	'cssls',
+	'cssmodules_ls',
 	'intelephense',
 	'jsonls',
 	'lua_ls',
+	'tailwindcss',
 	'ts_ls',
 }
 mason_lspconfig.setup {

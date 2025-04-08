@@ -1,3 +1,6 @@
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 local schemas = {
 	{
 		url = 'https://json.schemastore.org/tsconfig',
@@ -22,6 +25,7 @@ local schemas = {
 }
 
 return {
+	capabilities = capabilities,
 	settings = {
 		json = {
 			schemas = schemas,
