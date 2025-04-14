@@ -24,8 +24,10 @@ local ensure_installed = {
 	'comment',
 	'css',
 	'dockerfile',
+	'editorconfig',
 	'gitignore',
 	'html',
+	'java',
 	'javascript',
 	'jsdoc',
 	'json',
@@ -35,11 +37,13 @@ local ensure_installed = {
 	'luap',
 	'php',
 	'phpdoc',
+	'properties',
 	'toml',
 	'tsx',
 	'twig',
 	'typescript',
 	'vimdoc',
+	'yaml',
 }
 
 configs.setup {

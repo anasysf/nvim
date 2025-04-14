@@ -32,11 +32,13 @@ local ensure_installed = {
 	'cssls',
 	'cssmodules_ls',
 	'intelephense',
+	'jdtls',
 	'jsonls',
 	'lua_ls',
 	'tailwindcss',
 	'ts_ls',
 }
+
 mason_lspconfig.setup {
 	ensure_installed = ensure_installed,
 	handlers = handlers,
