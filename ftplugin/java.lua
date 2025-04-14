@@ -8,6 +8,11 @@ if not utils_ok then
 	return vim.notify('COULD NOT LOAD UTILS', vim.log.levels.ERROR, { title = 'UTILS' })
 end
 
+local on_attach_ok, on_attach = pcall(require, 'ayem.nvim-lspconfig.utils.on_attach')
+if not on_attach_ok then
+	return vim.notify('COULD NOT LOAD ON ATTACH', vim.log.levels.ERROR, { title = 'ON ATTACH' })
+end
+
 local data_dir = vim.fn.stdpath 'data'
 local mason_packages_dir = data_dir .. '/mason/packages'
 local jdtls_dir = mason_packages_dir .. '/jdtls'
@@ -63,6 +68,8 @@ local config = {
 	-- vim.fs.root requires Neovim 0.10.
 	-- If you're using an earlier version, use: require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'}),
 	root_dir = vim.fs.root(0, { '.git', 'mvnw', 'gradlew' }),
+
+	on_attach = on_attach,
 
 	-- Here you can configure eclipse.jdt.ls specific settings
 	-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request

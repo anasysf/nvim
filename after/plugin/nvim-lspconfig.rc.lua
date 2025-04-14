@@ -17,16 +17,6 @@ if not on_attach_ok then
 	return vim.notify('COULD NOT LOAD ON ATTACH', vim.log.levels.ERROR, { title = 'ON ATTACH' })
 end
 
-local server_opts = { on_attach = on_attach }
-local handlers = {
-	function(server_name)
-		local server_ok, server = pcall(require, 'ayem.nvim-lspconfig.servers.' .. server_name)
-		if server_ok then server_opts = vim.tbl_deep_extend('force', server, server_opts) end
-
-		lspconfig[server_name].setup(server_opts)
-	end,
-}
-
 local ensure_installed = {
 	'css_variables',
 	'cssls',
@@ -37,6 +27,20 @@ local ensure_installed = {
 	'lua_ls',
 	'tailwindcss',
 	'ts_ls',
+}
+
+local ignored_servers = { 'jdtls' }
+
+local server_opts = { on_attach = on_attach }
+local handlers = {
+	function(server_name)
+		if ignored_servers[server_name] ~= nil then return end
+
+		local server_ok, server = pcall(require, 'ayem.nvim-lspconfig.servers.' .. server_name)
+		if server_ok then server_opts = vim.tbl_deep_extend('force', server, server_opts) end
+
+		lspconfig[server_name].setup(server_opts)
+	end,
 }
 
 mason_lspconfig.setup {
