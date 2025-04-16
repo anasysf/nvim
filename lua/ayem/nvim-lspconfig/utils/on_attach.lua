@@ -2,8 +2,6 @@ local on_attach = function(_, bufnr)
 	local keymap = vim.keymap
 	local opts = { silent = true, buffer = bufnr }
 
-	-- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
 	vim.diagnostic.enable(false)
 	local toggle_diagnostics = function()
 		return vim.diagnostic.enable(not vim.diagnostic.is_enabled())

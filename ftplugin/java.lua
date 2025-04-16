@@ -19,6 +19,8 @@ local jdtls_dir = mason_packages_dir .. '/jdtls'
 local jdtls_bin = jdtls_dir .. (utils.is_win32() and '/jdtls.bat' or '/jdtls')
 local cwd = vim.fn.getcwd()
 
+local workspace_dir = 'C:\\Users\\elmahdad\\Documents\\projects\\java-workspace\\'
+
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
 	-- The command that starts the language server
@@ -58,7 +60,7 @@ local config = {
 		-- 💀
 		-- See `data directory configuration` section in the README
 		'-data',
-		cwd,
+		workspace_dir .. vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t'),
 	},
 
 	-- 💀
