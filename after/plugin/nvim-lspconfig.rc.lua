@@ -17,6 +17,15 @@ if not on_attach_ok then
 	return vim.notify('COULD NOT LOAD ON ATTACH', vim.log.levels.ERROR, { title = 'ON ATTACH' })
 end
 
+local cmp_nvim_lsp_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+if not cmp_nvim_lsp_ok then
+	return vim.notify(
+		'COULD NOT LOAD CMP_NVIM_LSP',
+		vim.log.levels.ERROR,
+		{ title = 'CMP_NVIM_LSP' }
+	)
+end
+
 local ensure_installed = {
 	'css_variables',
 	'cssls',
@@ -31,7 +40,11 @@ local ensure_installed = {
 
 local ignored_servers = { 'jdtls' }
 
-local server_opts = { on_attach = on_attach }
+local capabilities = cmp_nvim_lsp.default_capabilities()
+local server_opts = {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
 local handlers = {
 	function(server_name)
 		for _, value in ipairs(ignored_servers) do
