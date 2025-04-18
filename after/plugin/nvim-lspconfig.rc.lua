@@ -54,6 +54,7 @@ local handlers = {
 		local server_ok, server = pcall(require, 'ayem.nvim-lspconfig.servers.' .. server_name)
 		if server_ok then server_opts = vim.tbl_deep_extend('force', server, server_opts) end
 
+		-- return vim.lsp.config(server_name, server_opts)
 		return lspconfig[server_name].setup(server_opts)
 	end,
 }

@@ -13,13 +13,26 @@ if not on_attach_ok then
 	return vim.notify('COULD NOT LOAD ON ATTACH', vim.log.levels.ERROR, { title = 'ON ATTACH' })
 end
 
+local cmp_nvim_lsp_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+if not cmp_nvim_lsp_ok then
+	return vim.notify(
+		'COULD NOT LOAD CMP_NVIM_LSP',
+		vim.log.levels.ERROR,
+		{ title = 'CMP_NVIM_LSP' }
+	)
+end
+
 local data_dir = vim.fn.stdpath 'data'
 local mason_packages_dir = data_dir .. '/mason/packages'
 local jdtls_dir = mason_packages_dir .. '/jdtls'
-local jdtls_bin = jdtls_dir .. (utils.is_win32() and '/jdtls.bat' or '/jdtls')
-local cwd = vim.fn.getcwd()
+local launcher_jar = vim.fn.glob(jdtls_dir .. '/plugins/org.eclipse.equinox.launcher_*.jar')
 
 local workspace_dir = 'C:\\Users\\elmahdad\\Documents\\projects\\java-workspace\\'
+
+-- local java = (utils.is_win32() and 'C:\\Program Files\\Java\\jdk-21\\bin\\java.exe' or 'java')
+
+local client_capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = cmp_nvim_lsp.default_capabilities(client_capabilities)
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
@@ -45,7 +58,7 @@ local config = {
 
 		-- 💀
 		'-jar',
-		jdtls_dir .. '/plugins/org.eclipse.equinox.launcher_1.7.0.v20250331-1702.jar',
+		launcher_jar,
 		-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
 		-- Must point to the                                                     Change this to
 		-- eclipse.jdt.ls installation                                           the actual version
@@ -69,16 +82,15 @@ local config = {
 	--
 	-- vim.fs.root requires Neovim 0.10.
 	-- If you're using an earlier version, use: require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'}),
-	root_dir = vim.fs.root(0, { '.git', 'mvnw', 'gradlew' }),
+	root_dir = vim.fs.root(0, { '.git', 'mvnw', 'gradlew', 'pom.xml' }),
 
 	on_attach = on_attach,
+	capabilities = capabilities,
 
 	-- Here you can configure eclipse.jdt.ls specific settings
 	-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
 	-- for a list of options
-	settings = {
-		java = {},
-	},
+	-- settings = {},
 
 	-- Language server `initializationOptions`
 	-- You need to extend the `bundles` with paths to jar files
@@ -87,9 +99,7 @@ local config = {
 	-- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
 	--
 	-- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
-	init_options = {
-		bundles = {},
-	},
+	init_options = { extendedClientCapabilities = jdtls.extendedClientCapabilities },
 }
 
 -- This starts a new client & server,
